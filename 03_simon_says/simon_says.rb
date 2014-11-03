@@ -25,13 +25,11 @@ end
 def titleize sentence
   skip_words = ["and","over","the"]
   words = sentence.split
+  
   words.map! do |word|
-    if skip_words.include?(word)
-      word
-    else
-      word.capitalize!
-    end
+    skip_words.include?(word) ? word : word.capitalize!
   end
+
   words[0].capitalize!
   words.join(' ')  
 end
